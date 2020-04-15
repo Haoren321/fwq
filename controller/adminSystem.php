@@ -81,7 +81,7 @@
             $tag = $tagArray[$i];
             if($tag == "游戏"){
                 $tagId = "1001";
-            }else if($tag = "音乐"){
+            }else if($tag == "音乐"){
                 $tagId = "1002";
             }else if($tag == "动画"){
                 $tagId = "1003";
