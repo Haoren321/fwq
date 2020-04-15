@@ -49,7 +49,10 @@ function initVideo($sv_id)
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             array_push($videoArray, $row);
+            $coutWatch = (int)$row["cout_watch"] + 1;
         }
+        $sql = "UPDATE `sv_video` SET `cout_watch` = '$coutWatch' WHERE `sv_video`.`sv_id` = '$sv_id'";
+        query($sql);
         echo  json_encode($videoArray);
     }
 }

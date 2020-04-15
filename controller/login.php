@@ -9,7 +9,7 @@ require "../ben/user.php";
       $userId= $user['userId'];
       $userPwd = $user['userPwd'];
 
-      $sql = "SELECT * FROM `user` WHERE userId=$userId";
+      $sql = "SELECT * FROM `user` WHERE userPhone=$userId";
       $result = query($sql);
       if($result->num_rows > 0){
         $row = mysqli_fetch_assoc($result);
@@ -17,7 +17,7 @@ require "../ben/user.php";
             $user = $row;
             echo json_encode($user);
         }else{
-            echo "密码不存在";
+            echo "密码错误";
         }
       }else{
           echo "账号不存在";
